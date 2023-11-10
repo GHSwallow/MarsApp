@@ -1,4 +1,4 @@
-let NASA_BASE_URL = 'https://api.nasa.gov/mars-photos/api/v1/'
+let NASA_BASE_URL = 'https://api.nasa.gov/mars-photos/api/v1'
 
 export const getRoverNames = async () => {
     const apiUrl = `${NASA_BASE_URL}/rovers?api_key=${process.env.NASA_API_KEY}`
