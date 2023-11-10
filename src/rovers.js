@@ -1,5 +1,7 @@
+let NASA_BASE_URL = 'https://api.nasa.gov/mars-photos/api/v1/'
+
 export const getRoverNames = async () => {
-    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers?api_key=${process.env.NASA_API_KEY}`
+    const apiUrl = `${NASA_BASE_URL}/rovers?api_key=${process.env.NASA_API_KEY}`
     return fetch(apiUrl)
         .then((response) => {
             if (!response.ok) {
@@ -13,7 +15,7 @@ export const getRoverNames = async () => {
 }
 
 export const getSpecificRoverData = async (roverName) => {
-    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}?api_key=${process.env.NASA_API_KEY}`
+    const apiUrl = `${NASA_BASE_URL}/rovers/${roverName}?api_key=${process.env.NASA_API_KEY}`
 
     return fetch(apiUrl)
         .then((response) => {
@@ -39,7 +41,7 @@ export const getSpecificRoverData = async (roverName) => {
 }
 
 export const getRoverPhotosByCamera = async (rover, camera) => {
-    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=1000&camera=${camera}&api_key=${process.env.NASA_API_KEY}`
+    const apiUrl = `${NASA_BASE_URL}/rovers/${rover}/photos?sol=1000&camera=${camera}&api_key=${process.env.NASA_API_KEY}`
 
     return fetch(apiUrl)
         .then((response) => {
