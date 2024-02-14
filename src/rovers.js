@@ -9,9 +9,7 @@ export const getRoverNames = async () => {
             }
             return response.json()
         })
-        .then((data) => {
-            return data.rovers.map((rover) => rover.name.toLowerCase())
-        })
+        .then((data) => data.rovers.map((rover) => rover.name))
 }
 
 export const getSpecificRoverData = async (roverName) => {

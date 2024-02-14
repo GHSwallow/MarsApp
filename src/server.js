@@ -1,12 +1,13 @@
 import express from "express";
+import cors from "cors"
 import * as dotenv from "dotenv";
 import './rovers.js'
 import * as NASAActions from "./rovers.js";
 
 
 const app = express();
+app.use(cors({origin: '*'}))
 const port = 8000;
-
 if (process.env.NODE_ENV !== "production"){
     dotenv.config();
 }
